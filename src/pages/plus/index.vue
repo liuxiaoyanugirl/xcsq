@@ -6,44 +6,7 @@
 
     <i-button bind:getuserinfo="handleClick" type="info" style = "width : 10px; height : 5px;" size="small" shape="circle">发布</i-button>
     <i-button bind:click="handleClick" type="ghost"   size="small" shape="circle">取消发布</i-button>
-     <i-grid i-class="no-border" >
-    <i-grid-item i-class="no-border">
-        <i-grid-icon>
-            <image src="/static/grid/fish.png" />
-        </i-grid-icon>
-        <i-grid-label>coco</i-grid-label>
-    </i-grid-item>
-    <i-grid-item i-class="no-border">
-        <i-grid-icon>
-            <image src="/static/grid/rabbit.png" />
-        </i-grid-icon>
-        <i-grid-label>奶糖</i-grid-label>
-    </i-grid-item>
-    <i-grid-item i-class="no-border">
-        <i-grid-icon>
-            <image src="/static/grid/cat.png" />
-        </i-grid-icon>
-        <i-grid-label>花花</i-grid-label>
-    </i-grid-item>
-    <i-grid-item i-class="no-border">
-        <i-grid-icon>
-            <image src="/static/grid/dog.png" />
-        </i-grid-icon>
-        <i-grid-label>噜噜</i-grid-label>
-    </i-grid-item>
-    <i-grid-item i-class="no-border">
-        <i-grid-icon>
-            <image src="/static/grid/duk.png" />
-        </i-grid-icon>
-        <i-grid-label>小花</i-grid-label>
-    </i-grid-item>
-    <i-grid-item i-class="no-border">
-        <i-grid-icon>
-            <image src="/static/grid/misc.png" />
-        </i-grid-icon>
-        <i-grid-label>查看更多</i-grid-label>
-    </i-grid-item>
-</i-grid>
+
   </div>
 </template>
 <script>
