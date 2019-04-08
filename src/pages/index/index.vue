@@ -4,13 +4,13 @@
     <i-tab key="tab1" title="推荐"></i-tab>
     <i-tab key="tab2" title="关注"></i-tab>
 </i-tabs>
-  <image style = "width : 360px; height : 180px;" class="slide-image" src="http://img3.imgtn.bdimg.com/it/u=1655788903,3313191624&fm=26&gp=0.jpg" mode="scaleToFill"/> 
-  <i-panel title="#喵星人快报#  快来看新鲜出炉的彩色小喵咪">
+  <image style = "width : 360px; height : 180px;" class="slide-image" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554724924990&di=ad0ab6bc8f34369e9ab75b0f5f7f3945&imgtype=0&src=http%3A%2F%2Fimg02.tooopen.com%2Fproducts%2F20150209%2Ftooopen_53579758.jpg" mode="scaleToFill"/> 
+  <i-panel title="#最新大片">
 </i-panel>
     <i-notice-bar icon="systemprompt" loop>
-    {{notice}}游戏积分可以限时兑换大量礼品啦，小主们快来看看吧！
+    {{notice}}欢迎来到我的摄影小天地，在这里，你可以学到许多拍照技巧，并看到很多我美美的照片哦！
     </i-notice-bar>
-    <i-panel title="本周新宠榜" ></i-panel>
+    <i-panel title="分类" ></i-panel>
     <i-grid i-class="no-border" >
       <i-grid-item v-for="item in grids" :key="item" i-class="no-border">
       <i-grid-label>{{item}}</i-grid-label>
@@ -84,7 +84,7 @@
       <view class="top-padding"></view>
     </view>
 
-    
+
     </i-panel>
   </div>
 </template>

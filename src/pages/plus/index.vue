@@ -1,6 +1,6 @@
 <template>
   <div>
-     <i-panel title="快来分享你和主子的新鲜事吧...">
+     <i-panel title="我也要发布...">
     <view style="padding: 120px;">点击发布</view>
 </i-panel>
 
