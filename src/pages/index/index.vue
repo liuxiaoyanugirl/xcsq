@@ -16,42 +16,8 @@
       <i-grid-label>{{item}}</i-grid-label>
       </i-grid-item>
     </i-grid>
-    <i-grid-item i-class="no-border">
-        <i-grid-icon>
-            <image src="/static/grid/fish.png" />
-        </i-grid-icon>
-        <i-grid-label>coco</i-grid-label>
-    </i-grid-item>
-    <i-grid-item i-class="no-border">
-        <i-grid-icon>
-            <image src="/static/grid/rabbit.png" />
-        </i-grid-icon>
-        <i-grid-label>奶糖</i-grid-label>
-    </i-grid-item>
-    <i-grid-item i-class="no-border">
-        <i-grid-icon>
-            <image src="/static/grid/cat.png" />
-        </i-grid-icon>
-        <i-grid-label>花花</i-grid-label>
-    </i-grid-item>
-    <i-grid-item i-class="no-border">
-        <i-grid-icon>
-            <image src="/static/grid/dog.png" />
-        </i-grid-icon>
-        <i-grid-label>噜噜</i-grid-label>
-    </i-grid-item>
-    <i-grid-item i-class="no-border">
-        <i-grid-icon>
-            <image src="/static/grid/duk.png" />
-        </i-grid-icon>
-        <i-grid-label>小花</i-grid-label>
-    </i-grid-item>
-    <i-grid-item i-class="no-border">
-        <i-grid-icon>
-            <image src="/static/grid/misc.png" />
-        </i-grid-icon>
-        <i-grid-label>查看更多</i-grid-label>
-    </i-grid-item>
+    
+        
     <i-panel title="#热门推荐#">
 
       <view class="top-padding">
