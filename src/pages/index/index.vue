@@ -87,10 +87,15 @@ export default {
     }
   },
   created () {
-    // let app = getApp()
+    const db = wx.cloud.database({ env: 'xcsq-0f8ce5' })
+    db.collection('shop').get().then(
+      res => {
+        console.log(res.data)
+        this.shops = res.data
+      }
+    )
   }
-}
-</script>
+}</script>
 
 <style scoped>
 div >>> .no-border {
