@@ -10,10 +10,10 @@
     <i-notice-bar icon="systemprompt" loop>
     {{notice}}欢迎来到我的摄影小天地，在这里，你可以学到许多拍照技巧，并看到很多我美美的照片哦！
     </i-notice-bar>
-    <i-panel title="分类" ></i-panel>
+    
     <i-grid i-class="no-border" >
       <i-grid-item v-for="item in grids" :key="item" i-class="no-border">
-      <i-grid-label>{{item}}</i-grid-label>
+      <i-grid-label></i-grid-label>
       </i-grid-item>
     </i-grid>
     
@@ -62,7 +62,7 @@ export default {
   data () {
     
     return {
-      grids:['西点','主食','外卖','饮品','零食','面食'],
+      
       notice: "#限时特惠#  ",
       motto: 'Hello miniprograme',
       userInfo: {
