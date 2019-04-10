@@ -4,6 +4,7 @@
     <i-tab key="tab2" title="精美头饰"></i-tab>
     <i-tab key="tab3" title="动态卡片"></i-tab>
 </i-tabs>
+<image style = "width : 360px; height : 180px;" class="slide-image" src="cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/meitu.jpg" mode="scaleToFill"/> 
       <view class="top-padding">
       <i-card title="精选"  thumb="http://www.lnfda.com/uploads/allimg/150731/1-150I11506424E.jpg">
       </i-card>
