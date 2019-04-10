@@ -15,33 +15,13 @@
       <i-grid-item v-for="item in grids" :key="item" i-class="no-border">
       <i-grid-label></i-grid-label>
       </i-grid-item>
-    </i-grid>
-    
-        
+    </i-grid>  
     <i-panel title="#热门推荐#">
-
       <view class="top-padding">
       <i-card title="#春防大作战#"  thumb="https://thumbs.dreamstime.com/b/%E6%A8%B1%E6%A1%83%E5%BC%80%E8%8A%B1%E7%9A%84%E5%88%86%E6%94%AF%E5%9C%A8%E8%93%9D%E5%A4%A9%E8%83%8C%E6%99%AF%E7%9A%84%E6%99%B4%E6%9C%97%E7%9A%84%E6%98%A5%E6%97%A5%EF%BC%8C%E6%8B%B7%E8%B4%9D%E7%A9%BA%E9%97%B4-108734555.jpg">
         <view slot="content">点击参与讨论</view>
         <view slot="footer">30条讨论</view>
       </i-card>
-
-      <view class="top-padding"></view>
-
-      <i-card title="#新年表情包大赛#" i-class="top-padding"  thumb="http://img.zcool.cn/community/03178f958818f81a8012060c852249e.jpg">
-        <view slot="content">点击参与讨论</view>
-        <view slot="footer">215条讨论</view>
-      </i-card>
-
-
-      <view class="top-padding"></view>
-
-      <i-card title="#最囧萌宠睡姿#" i-class="top-padding"  thumb="http://n.sinaimg.cn/sinacn17/648/w640h808/20180624/3996-heirxyf1725415.jpg">
-        <view slot="content">#生活#</view>
-        <view slot="footer">639条讨论</view>
-      </i-card>
-
-
       <view class="top-padding"></view>
       <i-card title="#好物推荐#" i-class="top-padding"  thumb="http://img1.imgtn.bdimg.com/it/u=584884277,3668815364&fm=26&gp=0.jpg">
         <view slot="content">#生活#</view>
