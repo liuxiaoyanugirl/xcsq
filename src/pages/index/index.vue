@@ -14,8 +14,8 @@
     <i-panel title="#热门推荐#">
       <view class="top-padding">
         <view v-for="item in shops" :key='item' class="top-padding">
-      <i-card :title="item.name" :extra="item.type" :thumb="item.pic">
-        <view>{{item.introduction}}</view>
+      <i-card :title="item.name" :extra="item.introdnpmuction" :thumb="item.pic">
+       
         <view>{{item.foot}}</view>
       </i-card>
         </view>
@@ -92,7 +92,7 @@ export default {
       }
 
     )
-    
+
   }
 }</script>
 
