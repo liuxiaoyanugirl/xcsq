@@ -8,7 +8,7 @@
   <i-panel title="#最新大片">
 </i-panel>
     <i-notice-bar icon="systemprompt" loop>
-    {{notice}}欢迎来到我的摄影小天地，在这里，你可以学到许多拍照技巧，并看到很多我美美的照片哦！
+    {{notice}}欢迎来到我的摄影小天地，在这里，你可以学到许多拍照技巧，并看到很多我美的照片哦！
     </i-notice-bar>
     
     <i-panel title="#热门推荐#">
