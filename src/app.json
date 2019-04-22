@@ -26,8 +26,8 @@
       "iconPath": "static/tabs/home.png",
       "selectedIconPath": "static/tabs/home-active.png"
     }, {
-      "text": "发布",
-      "pagePath": "pages/plus/main",
+      "text": "地图",
+      "pagePath": "pages/map/main",
       "iconPath": "static/tabs/plus.png",
       "selectedIconPath": "static/tabs/plus-active.png"
     }, {

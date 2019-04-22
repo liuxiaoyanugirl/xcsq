@@ -5,12 +5,12 @@
   longitude="113.324520"
   latitude="23.099994"
   scale="14"
-  controls="{{controls}}"
-  bindcontroltap="controltap"
-  markers="{{markers}}"
-  bindmarkertap="markertap"
-  polyline="{{polyline}}"
-  bindregionchange="regionchange"
+  :controls="controls"
+  @controltap="controltap"
+  :markers="markers"
+  @markertap="markertap"
+  :polyline="polyline"
+  @regionchange="regionchange"
   show-location
   style="width: 100%; height: 300px;"
 ></map>
