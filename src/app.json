@@ -5,8 +5,8 @@
     "pages/counter/main",
     "pages/mine/main",
     "pages/map/main",
-    "pages/plus/main"
-
+    "pages/plus/main",
+    "pages/change/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -32,7 +32,7 @@
       "selectedIconPath": "static/tabs/plus-active.png"
     }, {
       "text": "兑换",
-      "pagePath": "pages/map/main",
+      "pagePath": "pages/change/main",
       "iconPath": "static/tabs/gift.png",
       "selectedIconPath": "static/tabs/gift-active.png"
     }, {
