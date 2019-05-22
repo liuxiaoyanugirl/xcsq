@@ -4,7 +4,6 @@
     "pages/logs/main",
     "pages/counter/main",
     "pages/mine/main",
-    "pages/map/main",
     "pages/plus/main",
     "pages/change/main"
   ],
@@ -25,11 +24,6 @@
       "pagePath": "pages/index/main",
       "iconPath": "static/tabs/home.png",
       "selectedIconPath": "static/tabs/home-active.png"
-    }, {
-      "text": "地图",
-      "pagePath": "pages/map/main",
-      "iconPath": "static/tabs/plus.png",
-      "selectedIconPath": "static/tabs/plus-active.png"
     }, {
       "text": "兑换",
       "pagePath": "pages/change/main",
