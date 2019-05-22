@@ -1,11 +1,8 @@
 {
   "pages": [
     "pages/index/main",
-    "pages/logs/main",
-    "pages/counter/main",
-    "pages/mine/main",
-    "pages/plus/main",
-    "pages/change/main"
+    "pages/change/main",
+    "pages/mine/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -25,10 +22,10 @@
       "iconPath": "static/tabs/home.png",
       "selectedIconPath": "static/tabs/home-active.png"
     }, {
-      "text": "兑换",
+      "text": "场景",
       "pagePath": "pages/change/main",
-      "iconPath": "static/tabs/gift.png",
-      "selectedIconPath": "static/tabs/gift-active.png"
+      "iconPath": "static/tabs/scene.png",
+      "selectedIconPath": "static/tabs/scene-active.png"
     }, {
       "text": "我的",
       "pagePath": "pages/mine/main",

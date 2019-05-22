@@ -14,17 +14,15 @@
     </block>
   </swiper>
 
-  <i-panel title="#最新大片">
+  <i-panel title="#潮装出行，致敬时尚#">
 </i-panel>
     <i-notice-bar icon="systemprompt" loop>
-    {{notice}}欢迎来到我的摄影小天地，在这里，你可以学到许多拍照技巧，并看到很多我美的照片哦！
+    {{notice}}来这里学会穿搭技巧，让你的生活更时髦！
     </i-notice-bar>
-    
-    <i-panel title="#热门推荐#">
+    <i-panel title="#夏季热门推荐#">
       <view class="top-padding">
         <view v-for="item in shops" :key='item' class="top-padding">
       <i-card :title="item.name" :extra="item.introdnpmuction" :thumb="item.pic">
-
         <view>{{item.foot}}</view>
       </i-card>
         </view>
@@ -39,7 +37,6 @@ import card from '@/components/card'
 
 export default {
   data () {
-    
     return {
       imgUrls: [
         'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559099177&di=0c7989a706c0eb6ee8f0d9793fe8fc31&imgtype=jpg&er=1&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20160429%2F714a17b47953472bac8f4332784c09e0_th.jpg',
@@ -51,7 +48,7 @@ export default {
       interval: 5000,
       duration: 1000,
       shops: [],
-      notice: "#限时特惠#  ",
+      notice: "#限时特惠#",
       motto: 'Hello miniprograme',
       userInfo: {
         nickName: 'mpvue',
