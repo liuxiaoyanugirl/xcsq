@@ -1,10 +1,19 @@
 <template>
   <div @click="clickHandle">
-    <i-tabs :current="current_scroll" scroll @change="handleChangeScroll">
-    <i-tab key="tab1" title="推荐"></i-tab>
-    <i-tab key="tab2" title="关注"></i-tab>
-</i-tabs>
-  <image style = "width : 360px; height : 180px;" class="slide-image" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554724924990&di=ad0ab6bc8f34369e9ab75b0f5f7f3945&imgtype=0&src=http%3A%2F%2Fimg02.tooopen.com%2Fproducts%2F20150209%2Ftooopen_53579758.jpg" mode="scaleToFill"/> 
+ <swiper
+      :indicator-dots="indicatorDots"
+      :autoplay="autoplay"
+      :interval="interval"
+      :duration="duration"
+      style="height:200px"
+    >
+    <block v-for="item in imgUrls" :key="item">
+      <swiper-item>
+        <image :src="item" style="width:100%;"/>
+      </swiper-item>
+    </block>
+  </swiper>
+
   <i-panel title="#最新大片">
 </i-panel>
     <i-notice-bar icon="systemprompt" loop>
@@ -15,7 +24,7 @@
       <view class="top-padding">
         <view v-for="item in shops" :key='item' class="top-padding">
       <i-card :title="item.name" :extra="item.introdnpmuction" :thumb="item.pic">
-       
+
         <view>{{item.foot}}</view>
       </i-card>
         </view>
@@ -32,6 +41,15 @@ export default {
   data () {
     
     return {
+      imgUrls: [
+        'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559099177&di=0c7989a706c0eb6ee8f0d9793fe8fc31&imgtype=jpg&er=1&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20160429%2F714a17b47953472bac8f4332784c09e0_th.jpg',
+        'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558504503972&di=b7118e6b1ac768aec89e249e767c74fe&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20171220%2Fcdb1484dd2f8460dbf75f01731483081.jpeg',
+        'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559099670&di=f900f09f73ea389271a1bdd421a493ce&imgtype=jpg&er=1&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F7f52e85cbd446e9c3da0d56769632912a209b3711aa23-SuKxgu_fw236'
+      ],
+      indicatorDots: true,
+      autoplay: true,
+      interval: 5000,
+      duration: 1000,
       shops: [],
       notice: "#限时特惠#  ",
       motto: 'Hello miniprograme',
@@ -94,7 +112,8 @@ export default {
     )
 
   }
-}</script>
+}
+</script>
 
 <style scoped>
 div >>> .no-border {
