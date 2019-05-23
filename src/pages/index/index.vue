@@ -13,22 +13,19 @@
       </swiper-item>
     </block>
   </swiper>
-
-  <i-panel title="#潮装出行，致敬时尚#">
-</i-panel>
     <i-notice-bar icon="systemprompt" loop>
     {{notice}}来这里学会穿搭技巧，让你的生活更时髦！
     </i-notice-bar>
-    <i-panel title="#夏季热门推荐#">
-      <view class="top-padding">
-        <view v-for="item in shops" :key='item' class="top-padding">
-      <i-card :title="item.name" :extra="item.introdnpmuction" :thumb="item.pic">
-        <view>{{item.foot}}</view>
-      </i-card>
-        </view>
-    </view>
 
-    </i-panel>
+    <i-grid i-class="no-border">
+      <i-grid-item @click="goList(item.url)" i-class="no-border" v-for="item in grids" :key="item">
+          <i-grid-icon>
+              <image :src="item.img" />
+          </i-grid-icon>
+          <i-grid-label>{{item.type}}</i-grid-label>
+      </i-grid-item>
+  </i-grid>
+   
   </div>
 </template>
 
@@ -41,14 +38,19 @@ export default {
         'cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/d.jpg',
         'cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/b.jpg',
         'cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/c.jpg',
-        'cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/d.jpg'
+        'cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/a.jpg'
       ],
       indicatorDots: true,
       autoplay: true,
       interval: 5000,
       duration: 1000,
+       grids: [
+        {type:'男孩子',img:'/static/images/boy.png',"url":'../list/main?type=1'},
+        {type:'女孩子',img:'/static/images/girl.png',"url":'../list/main?type=2'},
+        {type:'中性风',img:'/static/images/boy.png',"url":'../list/main?type=3'}
+      ],
       shops: [],
-      notice: "#限时特惠#",
+      notice: "#潮装出行，致敬时尚#",
       motto: 'Hello miniprograme',
       userInfo: {
         nickName: 'mpvue',
