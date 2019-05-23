@@ -1,74 +1,33 @@
 <template>
   <div @click="clickHandle">
-    <i-tabs :current="current_scroll" scroll @change="handleChangeScroll">
-    <i-tab key="tab1" title="推荐"></i-tab>
-    <i-tab key="tab2" title="关注"></i-tab>
-</i-tabs>
+ <swiper
+      :indicator-dots="indicatorDots"
+      :autoplay="autoplay"
+      :interval="interval"
+      :duration="duration"
+      style="height:200px"
+    >
+    <block v-for="item in imgUrls" :key="item">
+      <swiper-item>
+        <image :src="item" style="width:100%;"/>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <i-panel title="#潮装出行，致敬时尚#">
+</i-panel>
     <i-notice-bar icon="systemprompt" loop>
-    游戏积分可以限时兑换大量礼品啦，小主们快来看看吧！
+    {{notice}}来这里学会穿搭技巧，让你的生活更时髦！
     </i-notice-bar>
-    <i-grid i-class="no-border" >
-    <i-grid-item i-class="no-border">
-        <i-grid-icon>
-            <image src="/static/grid/1.png" />
-        </i-grid-icon>
-        <i-grid-label>coco</i-grid-label>
-    </i-grid-item>
-    <i-grid-item i-class="no-border">
-        <i-grid-icon>
-            <image src="/static/grid/2.png" />
-        </i-grid-icon>
-        <i-grid-label>奶糖</i-grid-label>
-    </i-grid-item>
-    <i-grid-item i-class="no-border">
-        <i-grid-icon>
-            <image src="/static/grid/3.png" />
-        </i-grid-icon>
-        <i-grid-label>花花</i-grid-label>
-        </i-grid-item>
-    <i-grid-item i-class="no-border">
-        <i-grid-icon>
-            <image src="/static/grid/2.png" />
-        </i-grid-icon>
-        <i-grid-label>噜噜</i-grid-label>
-    </i-grid-item>
-    <i-grid-item i-class="no-border">
-        <i-grid-icon>
-            <image src="/static/grid/3.png" />
-        </i-grid-icon>
-        <i-grid-label>小花</i-grid-label>
-    </i-grid-item>
-    <i-grid-item i-class="no-border">
-        <i-grid-icon>
-            <image src="/static/grid/3.png" />
-        </i-grid-icon>
-        <i-grid-label>哥哥</i-grid-label>
-    </i-grid-item>
-</i-grid>
-    
-    <i-panel title="#热门推荐#">
+    <i-panel title="#夏季热门推荐#">
       <view class="top-padding">
-      <i-card title="#春防大作战#"  thumb="https://thumbs.dreamstime.com/b/%E6%A8%B1%E6%A1%83%E5%BC%80%E8%8A%B1%E7%9A%84%E5%88%86%E6%94%AF%E5%9C%A8%E8%93%9D%E5%A4%A9%E8%83%8C%E6%99%AF%E7%9A%84%E6%99%B4%E6%9C%97%E7%9A%84%E6%98%A5%E6%97%A5%EF%BC%8C%E6%8B%B7%E8%B4%9D%E7%A9%BA%E9%97%B4-108734555.jpg">
-        <view slot="content">点击参与讨论</view>
-        <view slot="footer">30条讨论</view>
+        <view v-for="item in shops" :key='item' class="top-padding">
+      <i-card :title="item.name" :extra="item.introdnpmuction" :thumb="item.pic">
+        <view>{{item.foot}}</view>
       </i-card>
-      <view class="top-padding"></view>
-      <i-card title="#新年表情包大赛#" i-class="top-padding"  thumb="http://img.zcool.cn/community/03178f958818f81a8012060c852249e.jpg">
-        <view slot="content">点击参与讨论</view>
-        <view slot="footer">215条讨论</view>
-      </i-card>
-      <view class="top-padding"></view>
-      <i-card title="#最囧萌宠睡姿#" i-class="top-padding"  thumb="http://n.sinaimg.cn/sinacn17/648/w640h808/20180624/3996-heirxyf1725415.jpg">
-        <view slot="content">#生活#</view>
-        <view slot="footer">639条讨论</view>
-      </i-card>
-      <view class="top-padding"></view>
-      <i-card title="#好物推荐#" i-class="top-padding"  thumb="http://img1.imgtn.bdimg.com/it/u=584884277,3668815364&fm=26&gp=0.jpg">
-        <view slot="content">#生活#</view>
-        <view slot="footer">一起来看看吧</view>
-      </i-card>
-      <view class="top-padding"></view>
+        </view>
     </view>
+
     </i-panel>
   </div>
 </template>
@@ -78,13 +37,25 @@ import card from '@/components/card'
 export default {
   data () {
     return {
+      imgUrls: [
+        'cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/d.jpg',
+        'cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/b.jpg',
+        'cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/c.jpg',
+        'cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/d.jpg'
+      ],
+      indicatorDots: true,
+      autoplay: true,
+      interval: 5000,
+      duration: 1000,
+      shops: [],
+      notice: "#限时特惠#",
       motto: 'Hello miniprograme',
       userInfo: {
         nickName: 'mpvue',
         avatarUrl: 'http://mpvue.com/assets/logo.png'
       }
     }
-     },
+  },
   components: {
     card
   },
@@ -119,7 +90,19 @@ export default {
     }
   },
   created () {
-    // let app = getApp()
+    const db = wx.cloud.database({ env: 'xcsq-0f8ce5' })
+    db.collection('shop').get().then(
+      res => {
+        console.log(res.data)
+        this.shops = res.data
+      }
+    )
+    //cloud functions
+    wx.cloud.callFunction({ name: 'me' }).then(
+      res =>{
+        console.log(res)
+      }
+    )
   }
 }
 </script>
@@ -141,7 +124,7 @@ div >>> .no-border {
   height: 128rpx;
   margin: 20rpx;
   border-radius: 50%;
-  }
+}
 .userinfo-nickname {
   color: #aaa;
 }
