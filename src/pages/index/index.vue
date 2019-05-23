@@ -14,7 +14,7 @@
     </block>
   </swiper>
     <i-notice-bar icon="systemprompt" loop>
-    {{notice}}来这里学会穿搭技巧，让你的生活更时髦！
+    {{notice}}来这里查看穿搭技巧，让你的生活更时髦！
     </i-notice-bar>
 
     <i-grid i-class="no-border">
