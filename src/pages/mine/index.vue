@@ -6,9 +6,9 @@
     </view>
     <open-data type="userNickName"></open-data>
     </view>
-    <i-cell-group>
-    <i-cell title="我的收藏" is-link url="/pages/logs/main"></i-cell>
-</i-cell-group>
+    <i-panel title="快来和大家一起分享你的穿搭吧">
+    </i-panel>
+    <i-button @click="handleClick" type="warning" size="default">发布</i-button>
   </div>
 </template>
 
@@ -18,6 +18,9 @@ import card from '@/components/card'
 export default {
   data () {
     return {
+      name:"",
+      address:"",
+      reason:"",
       motto: 'Hello miniprograme',
       userInfo: {
         nickName: 'mpvue',
