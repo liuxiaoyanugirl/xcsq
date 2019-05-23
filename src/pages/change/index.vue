@@ -1,10 +1,10 @@
 <template>
-  <div><i-tabs :current="current_scroll" scroll @change="handleChangeScroll">
-    <i-tab key="tab1" title="尊贵皮肤"></i-tab>
-    <i-tab key="tab2" title="精美头饰"></i-tab>
-    <i-tab key="tab3" title="动态卡片"></i-tab>
-</i-tabs>
-<image style = "width : 360px; height : 180px;" class="slide-image" src="cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/meitu.jpg" mode="scaleToFill"/> 
+  <div>
+  <Tabs>
+        <Tab-pane label="macOS" icon="social-apple">标签一的内容</Tab-pane>
+        <Tab-pane label="Windows" icon="social-windows">标签二的内容</Tab-pane>
+        <Tab-pane label="Linux" icon="social-tux">标签三的内容</Tab-pane>
+    </Tabs>
       <view class="top-padding">
       <i-card title="精选"  thumb="http://www.lnfda.com/uploads/allimg/150731/1-150I11506424E.jpg">
       </i-card>

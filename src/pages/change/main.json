@@ -10,6 +10,10 @@
         "i-grid-label": "../../../static/dist/grid-label/index",
         "i-notice-bar": "../../../static/dist/notice-bar/index",
         "i-tabs": "../../../static/dist/tabs/index",
-        "i-tab": "../../../static/dist/tab/index"
+        "i-tab": "../../../static/dist/tab/index",
+        "i-tabs-icon": "../../../static/dist/notice-bar/index",
+        "i-tabs-label": "../../../static/dist/notice-bar/index",
+        "i-tabs-pane": "../../../static/dist/notice-bar/index"
+        
     }
   }

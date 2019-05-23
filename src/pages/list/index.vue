@@ -30,51 +30,6 @@ export default {
   components: {
     card
   },
-  methods: {
-    bindViewTap () {
-      const url = '../logs/main'
-      if (mpvuePlatform === 'wx') {
-        mpvue.switchTab({ url })
-      } else {
-        mpvue.navigateTo({ url })
-      }
-    },
-    bindViewTap () {
-      const url = '../logs/main'
-      if (mpvuePlatform === 'wx') {
-        mpvue.switchTab({ url })
-      } else {
-        mpvue.navigateTo({ url })
-      }
-    },
-    handleChange ({ detail }) {
-    this.setData({
-      current: detail.key
-    }); 
-    },
-    handleChangeScroll (event) {
-    this.current_scroll = event.mp.detail.key
-    },
-    clickHandle (ev) {
-      console.log('clickHandle:', ev)
-      // throw {message: 'custom test'}
-    }
-  },
-  created () {
-    const db = wx.cloud.database({ env: 'xcsq-0f8ce5' })
-    db.collection('shop').get().then(
-      res => {
-        console.log(res.data)
-        this.shops = res.data
-      }
-    )
-    //cloud functions
-    wx.cloud.callFunction({ name: 'me' }).then(
-      res =>{
-        console.log(res)
-      }
-    )
-
   onLoad (option){
     console.log(option.type)
     this.recommand = require('@/data/' + option.type + '.json')
