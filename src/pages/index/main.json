@@ -10,6 +10,9 @@
         "i-grid-label": "../../../static/dist/grid-label/index",
         "i-notice-bar": "../../../static/dist/notice-bar/index",
         "i-tabs": "../../static/dist/tabs/index",
-        "i-tab": "../../static/dist/tab/index"
+        "i-tab": "../../static/dist/tab/index",
+        "i-back-top": "../../static/dist/tab/index"
+       
+
     }
   }

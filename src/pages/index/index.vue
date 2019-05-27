@@ -25,8 +25,26 @@
           <i-grid-label>{{item.type}}</i-grid-label>
       </i-grid-item>
   </i-grid>
-   
+  <i-panel class="top-padding">博主推荐</i-panel>
+   <view> 
+      <i-card title="清凉性感" extra="英伦复古纯色T恤"   thumb="cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/3.jpeg">
+      </i-card>
+      <i-card title="简洁低调" extra="英伦复古纯色T恤"   thumb="cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/1.jpeg">
+      </i-card>
+      <i-card title="清凉性感" extra="英伦复古纯色T恤"   thumb="cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/3.jpeg">
+      </i-card>
+      <i-card title="简洁低调" extra="英伦复古纯色T恤"   thumb="cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/1.jpeg">
+      </i-card>
+      <i-card title="清凉性感" extra="英伦复古纯色T恤"   thumb="cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/3.jpeg">
+      </i-card>
+      <i-card title="简洁低调" extra="英伦复古纯色T恤"   thumb="cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/1.jpeg">
+      </i-card>
+    </view>
+    <Back-top :height="100" :bottom="100">
+        <div class="top">返回顶端</div>
+    </Back-top>
   </div>
+  
 </template>
 
 <script>
@@ -110,6 +128,13 @@ export default {
 </script>
 
 <style scoped>
+.top{
+        padding: 10px;
+        background: rgba(0, 153, 229, .7);
+        color: #fff;
+        text-align: center;
+        border-radius: 2px;
+    }
 div >>> .no-border {
   border-width: 0pt;
 }
