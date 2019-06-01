@@ -1,10 +1,9 @@
 {
   "pages": [
-    "pages/home/main",
+    "pages/welcome/main",
     "pages/index/main",
     "pages/change/main",
     "pages/mine/main"
-
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -19,12 +18,6 @@
     "borderStyle": "white",
 
     "list": [
-      {
-        "text": "主页",
-        "pagePath": "pages/home/main",
-        "iconPath": "static/tabs/home.png",
-        "selectedIconPath": "static/tabs/home-active.png"
-      }, 
       {
       "text": "首页",
       "pagePath": "pages/index/main",
