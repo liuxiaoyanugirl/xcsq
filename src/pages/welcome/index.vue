@@ -6,10 +6,10 @@
     </view>
     <open-data type="userNickName"></open-data>
     </view>
-    <view class="circle">
-    <i-button @click="handleClick">进入</i-button>
+    <view class="circle"  @click="handleClick">
+    进入
     </view>
-     <i-panel>博主推荐</i-panel>
+    
   </div>
 
 </template>
@@ -63,16 +63,22 @@ handleClick(){
 
 </script>
 <style scoped>
+div{
+  background-color: aqua;
+}
 .circle{
+  text-align: center;
+  line-height: 100px;
   width: 100px;
   height: 100px;
-  margin: 50px auto;
-  color:pink;
+  margin: 120px auto;
+  color:black;
   background-color: aqua;
   border-radius: 100%;
-  border: 2px solid #fff;
+  border: 8px solid #fff;
 
 }
+
 .userinfo {
 position: relative;
 width: 750rpx;
@@ -89,7 +95,7 @@ display: block;
 width: 160rpx;
 height: 160rpx;
 margin: 20rpx;
-margin-top: 50rpx;
+margin-top: 80rpx;
 border-radius: 50%;
 border: 2px solid #fff;
 box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);

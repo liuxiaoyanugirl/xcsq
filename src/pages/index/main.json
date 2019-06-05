@@ -1,5 +1,5 @@
 {
-    "navigationBarTitleText": "星宠社区",
+    "navigationBarTitleText": "搭学生穿搭指南",
     "usingComponents": {
         "i-button": "../../../static/dist/button/index",
         "i-card": "../../../static/dist/card/index",

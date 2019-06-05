@@ -1,14 +1,9 @@
 <template>
   <div>
-     <i-panel title="#夏季热门推荐#">
-      <view class="top-padding">
-        <view v-for="item in shops" :key='item' class="top-padding">
-      <i-card :title="item.name" :extra="item.introdnpmuction" :thumb="item.pic">
-        <view>{{item.foot}}</view>
+     <i-card v-for="item in list" :key="item" i-class="split" :title="item.name" :thumb="item.image" >
+        <view slot="content">{{item.remark}}</view>
+        <view slot="footer">{{item.address}}</view>
       </i-card>
-        </view>
-    </view>
-    </i-panel>
   </div>
 </template>
 
@@ -18,21 +13,15 @@ import card from '@/components/card'
 export default {
   data () {
     return {
-      shops: [],
-      notice: "#限时特惠#",
-      motto: 'Hello miniprograme',
-      userInfo: {
-        nickName: 'mpvue',
-        avatarUrl: 'http://mpvue.com/assets/logo.png'
-      }
+      list:[]
     }
   },
   components: {
     card
   },
   onLoad (option){
-    console.log(option.type)
     this.recommand = require('@/data/' + option.type + '.json')
+    console.log(this.list)
   },
 
   created () {

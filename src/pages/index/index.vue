@@ -16,30 +16,25 @@
     <i-notice-bar icon="systemprompt" loop>
     {{notice}}来这里查看穿搭技巧，让你的生活更时髦！
     </i-notice-bar>
-
-    <i-grid i-class="no-border">
-      <i-grid-item @click="goList(item.url)" i-class="no-border" v-for="item in grids" :key="item">
+ <i-grid>
+      <i-grid-item @click="goType(gird.url)"  v-for="grid in grids" :key="grid">
           <i-grid-icon>
-              <image :src="item.img" />
+              <image :src="grid.image" />
           </i-grid-icon>
-          <i-grid-label>{{item.type}}</i-grid-label>
+          <i-grid-label>{{grid.title}}</i-grid-label>
       </i-grid-item>
-  </i-grid>
-  <i-panel class="top-padding">博主推荐</i-panel>
-   <view> 
-      <i-card title="清凉性感" extra="英伦复古纯色T恤"   thumb="cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/3.jpeg">
-      </i-card>
-      <i-card title="简洁低调" extra="英伦复古纯色T恤"   thumb="cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/1.jpeg">
-      </i-card>
-      <i-card title="清凉性感" extra="英伦复古纯色T恤"   thumb="cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/3.jpeg">
-      </i-card>
-      <i-card title="简洁低调" extra="英伦复古纯色T恤"   thumb="cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/1.jpeg">
-      </i-card>
-      <i-card title="清凉性感" extra="英伦复古纯色T恤"   thumb="cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/3.jpeg">
-      </i-card>
-      <i-card title="简洁低调" extra="英伦复古纯色T恤"   thumb="cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/1.jpeg">
+ </i-grid>
+  <view  class="box1"> 
+   博主推荐
+  </view>
+
+   <view style="padding:15px"> 
+      <i-card v-for="item in top" :key="item" i-class="split" :title="item.name" :thumb="item.image" >
+        <view slot="content">{{item.remark}}</view>
+        <view slot="footer">{{item.address}}</view>
       </i-card>
     </view>
+    
     <Back-top :height="100" :bottom="100">
         <div class="top">返回顶端</div>
     </Back-top>
@@ -63,9 +58,16 @@ export default {
       interval: 5000,
       duration: 1000,
        grids: [
-        {type:'男孩子',img:'/static/images/boy.png',"url":'../list/main?type=1'},
-        {type:'女孩子',img:'/static/images/girl.png',"url":'../list/main?type=2'},
-        {type:'中性风',img:'/static/images/boy.png',"url":'../list/main?type=3'}
+        {title:'男孩子',image:'/static/images/boy.png'},
+        {title:'女孩子',image:'/static/images/girl.png'},
+        {title:'中性风',image:'/static/images/both.png'}
+      ],
+      top:[
+     {name:"简洁低调潮装出行，致敬时尚潮装出行，致敬时尚潮装出行，致敬时尚",address:"英伦小铺",image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/3.jpeg",remark:"英伦复古纯色T恤"}, 
+     {name:"简洁低调",address:"英伦小铺",image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/3.jpeg",remark:"英伦复古纯色T恤"},
+     {name:"简洁低调",address:"英伦小铺",image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/3.jpeg",remark:"英伦复古纯色T恤"},
+     {name:"简洁低调",address:"英伦小铺",image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/3.jpeg",remark:"英伦复古纯色T恤"},
+     {name:"简洁低调",address:"英伦小铺",image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/3.jpeg",remark:"英伦复古纯色T恤"}
       ],
       shops: [],
       notice: "#潮装出行，致敬时尚#",
@@ -80,6 +82,11 @@ export default {
     card
   },
   methods: {
+    goType(type){
+      console.log(type)
+       let url = '../list/main?type=' + type.title
+      mpvue.navigateTo({ url })
+    },
     bindViewTap () {
       const url = '../logs/main'
       if (mpvuePlatform === 'wx') {
@@ -137,6 +144,17 @@ export default {
     }
 div >>> .no-border {
   border-width: 0pt;
+}
+.box1{
+  margin-left: 20px;
+  margin-bottom: 10px;
+  width: 100px;
+  height: 30px;
+  text-align: left;
+  line-height: 30px;
+  border-radius: 8%;
+  color: aqua;
+  font-size: 20px;
 }
 .top-padding {
   padding-top: 50rpx;
