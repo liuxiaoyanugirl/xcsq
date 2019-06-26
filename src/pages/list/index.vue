@@ -20,7 +20,7 @@ export default {
     card
   },
   onLoad (option){
-    this.recommand = require('@/data/' + option.type + '.json')
+    this.list = require('@/data/' + option.type + '.json')
     console.log(this.list)
   },
 

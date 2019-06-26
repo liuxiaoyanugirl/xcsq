@@ -1,5 +1,7 @@
 [
-    {"name":"老街烧烤","address":"漫时区","remark":"连锁品牌","img":"/static/images/1.jpg","type":1},
-    {"name":"化骨绵爪","address":"长鑫家园6号商铺","remark":"别具一格的主题烧烤店","img":"/static/images/1.jpg","type":1}
+    {"name":"简洁低调","address":"英伦小铺","remark":"致敬时尚潮装出行","image":"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/3.jpeg","type":1},
+    {"name":"简洁低调","address":"英伦小铺","remark":"简洁低调潮装出行","image":"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/3.jpeg","type":1},
+    {"name":"简洁低调","address":"英伦小铺","remark":"致敬时尚潮装出行","image":"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/3.jpeg","type":1},
+    {"name":"简洁低调","address":"英伦小铺","remark":"简洁低调潮装出行","image":"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/3.jpeg","type":1}
     
 ]

@@ -17,7 +17,7 @@
     {{notice}}来这里查看穿搭技巧，让你的生活更时髦！
     </i-notice-bar>
  <i-grid>
-      <i-grid-item @click="goType(gird.url)"  v-for="grid in grids" :key="grid">
+      <i-grid-item @click="goType(grid)"  v-for="grid in grids" :key="grid">
           <i-grid-icon>
               <image :src="grid.image" />
           </i-grid-icon>
@@ -58,7 +58,7 @@ export default {
       interval: 5000,
       duration: 1000,
        grids: [
-        {title:'男孩子',image:'/static/images/boy.png'},
+        {title:'男孩子',image:'/static/images/boy.png',},
         {title:'女孩子',image:'/static/images/girl.png'},
         {title:'中性风',image:'/static/images/both.png'}
       ],
@@ -69,13 +69,7 @@ export default {
      {name:"简洁低调",address:"英伦小铺",image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/3.jpeg",remark:"英伦复古纯色T恤"},
      {name:"简洁低调",address:"英伦小铺",image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/3.jpeg",remark:"英伦复古纯色T恤"}
       ],
-      shops: [],
       notice: "#潮装出行，致敬时尚#",
-      motto: 'Hello miniprograme',
-      userInfo: {
-        nickName: 'mpvue',
-        avatarUrl: 'http://mpvue.com/assets/logo.png'
-      }
     }
   },
   components: {
