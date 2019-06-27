@@ -1,5 +1,5 @@
 {
-    "navigationBarTitleText": "搭学生穿搭指南",
+    "navigationBarTitleText": "穿搭指南",
     "usingComponents": {
         "i-button": "../../../static/dist/button/index",
         "i-card": "../../../static/dist/card/index",

@@ -65,9 +65,8 @@ export default {
       top:[
      {name:"简洁低调潮装出行，致敬时尚潮装出行",address:"英伦小铺",image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/3.jpeg",remark:"英伦复古纯色T恤"}, 
      {name:"简洁低调",address:"英伦小铺",image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/3.jpeg",remark:"英伦复古纯色T恤"},
-     {name:"简洁低调",address:"英伦小铺",image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/3.jpeg",remark:"英伦复古纯色T恤"},
-     {name:"简洁低调",address:"英伦小铺",image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/3.jpeg",remark:"英伦复古纯色T恤"},
      {name:"简洁低调",address:"英伦小铺",image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/3.jpeg",remark:"英伦复古纯色T恤"}
+     
       ],
       notice: "#潮装出行，致敬时尚#",
     }
