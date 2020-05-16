@@ -8,14 +8,15 @@
 		"newFeature": true,
 		"autoAudits": false,
 		"uglifyFileName": true,
-		"checkInvalidKey": true
+		"checkInvalidKey": true,
+		"checkSiteMap": false
 	},
 	"cloudfunctionRoot": "function/",
 	"miniprogramRoot": "dist/wx/",
 	"compileType": "miniprogram",
 	"appid": "wx665e91032a9586d1",
 	"projectname": "my-project",
-	"libVersion": "2.7.0",
+	"libVersion": "2.11.0",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {

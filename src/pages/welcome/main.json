@@ -3,7 +3,6 @@
     "usingComponents": {
         "i-button": "../../../static/dist/button/index",
         "i-card": "../../../static/dist/card/index",
-        "i-panel": "../../../static/dist/panel/index",
         "i-grid": "../../../static/dist/grid/index",
         "i-grid-item": "../../../static/dist/grid-item/index",
         "i-grid-icon": "../../../static/dist/grid-icon/index",

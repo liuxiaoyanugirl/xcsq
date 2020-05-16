@@ -2,6 +2,7 @@
     "navigationBarTitleText": "穿搭指南",
     "usingComponents": {
         "i-button": "../../../static/dist/button/index",
+        "i-input": "../../../static/dist/input/index",
         "i-card": "../../../static/dist/card/index",
         "i-panel": "../../../static/dist/panel/index",
         "i-grid": "../../../static/dist/grid/index",
