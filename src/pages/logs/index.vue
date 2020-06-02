@@ -1,12 +1,6 @@
 <template>
   <div @click="clickHandle">
- <swiper
-      :indicator-dots="indicatorDots"
-      :autoplay="autoplay"
-      :interval="interval"
-      :duration="duration"
-      style="height:200px"
-    >
+ 
     <block v-for="item in imgUrls" :key="item">
       <swiper-item>
         <image :src="item" style="width:100%;"/>

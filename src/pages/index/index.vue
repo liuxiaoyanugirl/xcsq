@@ -1,43 +1,19 @@
 <template>
-  <div @click="clickHandle">
- <swiper
-      :indicator-dots="indicatorDots"
-      :autoplay="autoplay"
-      :interval="interval"
-      :duration="duration"
-      style="height:200px"
-    >
-    <block v-for="item in imgUrls" :key="item">
-      <swiper-item>
-        <image :src="item" style="width:100%;"/>
-      </swiper-item>
-    </block>
-  </swiper>
-    <i-notice-bar icon="systemprompt" loop>
-    {{notice}}来这里查看穿搭技巧，让你的生活更时髦！
-    </i-notice-bar>
- <i-grid>
-      <i-grid-item @click="goType(grid)"  v-for="grid in grids" :key="grid">
-          <i-grid-icon>
-              <image :src="grid.image" />
-          </i-grid-icon>
-          <i-grid-label>{{grid.title}}</i-grid-label>
-      </i-grid-item>
- </i-grid>
-  <view  class="box1"> 
-   博主推荐
-  </view>
-
-   <view style="padding:15px"> 
-      <i-card v-for="item in top" :key="item" i-class="split" :title="item.name" :thumb="item.image" >
-        <view slot="content">{{item.remark}}</view>
-        <view slot="footer">{{item.address}}</view>
+  <div @click="clickHandle" >
+     <view >
+  
+     <img class="freeBG" src="/static/images/girl.gif">
+     1324365
+    <view > 
+      <i-card v-for="item in top" :key="item" :title="item.name" :thumb="item.image" >
       </i-card>
+      
     </view>
-    
-    <Back-top :height="100" :bottom="100">
-        <div class="top">返回顶端</div>
-    </Back-top>
+      <div class="say">
+       
+  
+      </div>
+    </view>
   </div>
   
 </template>
@@ -47,26 +23,14 @@ import card from '@/components/card'
 export default {
   data () {
     return {
-      imgUrls: [
-        'cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/d.jpg',
-        'cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/b.jpg',
-        'cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/c.jpg',
-        'cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/a.jpg'
-      ],
+      value: '123',
       indicatorDots: true,
       autoplay: true,
-      interval: 5000,
       duration: 1000,
-       grids: [
-        {title:'男孩子',image:'/static/images/boy.png',},
-        {title:'女孩子',image:'/static/images/girl.png'},
-        {title:'中性风',image:'/static/images/both.png'}
-      ],
       top:[
-     {name:"简洁低调潮装出行，致敬时尚潮装出行",address:"英伦小铺",image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/3.jpeg",remark:"英伦复古纯色T恤"}, 
-     {name:"简洁低调",address:"英伦小铺",image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/3.jpeg",remark:"英伦复古纯色T恤"},
-     {name:"简洁低调",address:"英伦小铺",image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/3.jpeg",remark:"英伦复古纯色T恤"}
-     
+     {name:"简洁低调",address:"英伦小铺",image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5-1259004537/xcsq/卡通猪.png"}, 
+     {name:"简洁低调",address:"英伦小铺",image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5-1259004537/xcsq/卡通猪.png"},
+     {name:"简洁低调",address:"英伦小铺",image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5-1259004537/xcsq/卡通猪.png"}
       ],
       notice: "#潮装出行，致敬时尚#",
     }
@@ -126,11 +90,43 @@ export default {
   }
 }
 </script>
+<style >
+.say {
+width: 176px;
+height: 260px;
+border: yellow solid 10rpx;
+border-radius: 180px 1px 180px 40px;
+margin: 72px auto;
+transform: rotate(22deg);
+transform-origin: ;
+transform-origin: right top;
+}
+.i-card {
+font-size: 14px;
+overflow: hidden;
+position: relative;
+background: #fff;
+border: 1rpx solid #dddee1;
+border-radius: 5px;
+}
 
+</style>
+</style>
 <style scoped>
-.top{
-        padding: 10px;
-        background: rgba(0, 153, 229, .7);
+.split{
+  height: 20%;
+}
+.freeBG{
+         width: 100%;
+         height: 100%;
+         position: absolute;
+         z-index: -1;
+}
+.panel{
+       height: 20%;
+        padding-top: 10px;
+        margin: 10px auto;
+        background:wheat;
         color: #fff;
         text-align: center;
         border-radius: 2px;

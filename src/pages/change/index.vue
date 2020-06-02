@@ -1,112 +1,177 @@
 <template>
-  <div>
-<i-tabs :current="current" @change="handleChange">
-    <i-tab key="tab1" title="学院日常"></i-tab>
-    <i-tab key="tab2" title="面试轻熟"></i-tab>
-    <i-tab key="tab3" title="出游度假"></i-tab>
-    <i-tab key="tab4" title="运动朋克"></i-tab>
-</i-tabs>
-  <view v-if="show1">  
-    <i-card style="padding: 15px;" v-for="item in top1" :key="item">
-    <view slot="content"><image style="width:100%;height:80pt;" :src="item.image" /></view>
-    <view slot="footer">{{item.introduce}}</view>    
-    </i-card>
-  </view>
-  <view v-if="show2">
-     <i-card style="padding: 15px;" v-for="item in top2" :key="item">
-     <view slot="content"><image style="width:100%;height:80pt;" :src="item.image" /></view>
-     <view slot="footer">{{item.introduce}}</view>    
-     </i-card>
-  </view>
-  <view v-if="show3">
-     <i-card style="padding: 15px;" v-for="item in top3" :key="item">
-     <view slot="content"><image style="width:100%;height:80pt;" :src="item.image" /></view>
-     <view slot="footer">{{item.introduce}}</view>    
-     </i-card>
-  </view>
-  <view v-if="show4">
-     <i-card style="padding: 15px;" v-for="item in top4" :key="item">
-     <view slot="content"><image style="width:100%;height:80pt;" :src="item.image" /></view>
-     <view slot="footer">{{item.introduce}}</view>    
-     </i-card>
-  </view>
-  </div>
+<div>
+  今日排行<i-button type="primary" shape="circle">刷新</i-button>
+  <i-grid>
+      <i-grid-item @click="goType(grid)"  v-for="grid in grids" :key="grid">
+          <i-grid-icon>
+              <image :src="grid.image" />
+          </i-grid-icon>
+      </i-grid-item>
+ </i-grid>
+<div class="run1">
+  <img  class="img" src="cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5-1259004537/xcsq/4款创意坐姿动物矢量素材.jpg">
+</div>
+<div class="run2">
+  <img  class="img" src="cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5-1259004537/xcsq/4款创意坐姿动物矢量素材.jpg">
+</div>
+<div class="run1">
+  <img  class="img" src="cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5-1259004537/xcsq/4款创意坐姿动物矢量素材.jpg">
+</div>
+<div class="run2">
+ <img  class="img" src="cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5-1259004537/xcsq/4款创意坐姿动物矢量素材.jpg">
+</div>
+<div class="run1">
+ <img  class="img" src="cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5-1259004537/xcsq/4款创意坐姿动物矢量素材.jpg">
+</div>
+
+<!--index.wxml-->
+<view class="container">
+  <ec-canvas id="mychart-dom-graph" canvas-id="mychart-graph" ec="{{ ec }}"></ec-canvas>
+</view>
+
+
+</div>
 </template>
 
 <script>
-import card from '@/components/card'
+
+import * as echarts from '../../ec-canvas/echarts';
+const app = getApp();
+ 
+function initChart(canvas, width, height) {
+  const chart = echarts.init(canvas, null, {
+    width: width,
+    height: height
+  });
+  canvas.setChart(chart);
+ 
+  var option = {
+    backgroundColor: "#ffffff",
+    color: ["#37A2DA", "#FF9F7F"],
+    tooltip: {},
+    xAxis: {
+      show: false
+    },
+    yAxis: {
+      show: false
+    },
+    radar: {
+      indicator: [{
+        name: '食品',
+        max: 500
+      },
+      {
+        name: '玩具',
+        max: 500
+      },
+      {
+        name: '服饰',
+        max: 500
+      },
+      {
+        name: '绘本',
+        max: 500
+      },
+      {
+        name: '医疗',
+        max: 500
+      },
+      {
+        name: '门票',
+        max: 500
+      }
+      ]
+    },
+    series: [{
+      name: '预算 vs 开销',
+      type: 'radar',
+      data: [{
+        value: [430, 340, 500, 300, 490, 400],
+        name: '预算'
+      },
+      {
+        value: [300, 430, 150, 300, 420, 250],
+        name: '开销'
+      }
+      ]
+    }]
+  };
+ 
+  chart.setOption(option);
+  return chart;
+}
+ 
+Page({
+  data: {
+    ec: {
+      onInit: initChart
+    }
+  },
+ 
+  onReady() {
+  }
+});
 
 export default {
+ 
   data () {
     return {
-        current:'tab1',
-        show1: true,
-        show2: false,
-        show3: false,
-        show4: false,
-        top1: [
-         {image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/dailyboy1.jpg",introduce:"“休闲舒适的日常穿搭，元气满满"},
-          {image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/daily1.jpg",introduce:"休闲舒适的日常穿搭，元气满满"},  
-          {image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/daily2.jpg",introduce:"“休闲舒适的日常穿搭，元气满满"},
-          {image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/daily3.jpg",introduce:"休闲舒适的日常穿搭，元气满满"},            
-            ],
-        top2: [
-         {image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/1.jpeg",introduce:"“成熟稳重的服装搭配，让你自信面对生活挑战"},
-          {image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/2.jpeg",introduce:"成熟稳重的服装搭配，让你自信面对生活挑战"},  
-          {image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/3.jpeg",introduce:"“成熟稳重的服装搭配，让你自信面对生活挑战"},
-          {image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/5.jpeg",introduce:"成熟稳重的服装搭配，让你自信面对生活挑战"},            
-            ],
-        top3: [
-         {image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/vac1.jpg",introduce:"“度假就要挑眼，拍照张扬才好看"},
-          {image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/vac 2.jpg",introduce:"度假就要挑眼，拍照张扬才好看"},  
-          {image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/vac 3.jpg",introduce:"“度假就要挑眼，拍照张扬才好看"},
-          {image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/vac4.jpg",introduce:"度假就要挑眼，拍照张扬才好看"},            
-            ],
-        top4: [
-          {image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/cool1.jpg",introduce:"“度假就要挑眼，拍照张扬才好看"},
-          {image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/cool2.jpg",introduce:"度假就要挑眼，拍照张扬才好看"},  
-          {image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/cool3.jpg",introduce:"“度假就要挑眼，拍照张扬才好看"},
-          {image:"cloud://xcsq-0f8ce5.7863-xcsq-0f8ce5/xcsq/cool4.jpg",introduce:"度假就要挑眼，拍照张扬才好看"},            
-            ]
-      }     
-    },
-  components: {
-    card
-  },
-  methods: {
-    handleChange ( detail ) {
-      console.log(detail)
-        this.current = detail.mp.detail.key
-        if (this.current === 'tab1'){
-          this.show1 = true;
-          this.show2 = false;
-          this.show3 = false;
-          this.show4 = false;
-        }else if(this.current === 'tab2'){
-          this.show1 = false;
-          this.show2 = true;
-          this.show3 = false;
-          this.show4 = false;
-        }else if(this.current ==='tab3'){
-          this.show1 = false;
-          this.show2 = false;
-          this.show3 = true;
-          this.show4 = false;
-        }else{
-          this.show1 = false;
-          this.show2 = false;
-          this.show3 = false;
-          this.show4 = true;
-        }
+       grids: [
+        {image:'/static/images/0.png',},
+        {image:'/static/images/1.png'},
+        {image:'/static/images/2.png'},
+        {image:'/static/images/3.png',},
+        {image:'/static/images/4.png'},
+        {image:'/static/images/5.png'},
+        {image:'/static/images/6.png',},
+        {image:'/static/images/7.png'},
+        {image:'/static/images/8.png'},
+        {image:'/static/images/9.png'}
+      ]
+      
     }
-
-  },
-
-  created () {
-
   }
 }
 </script>
 
 <style scoped>
+/**app.wxss**/
+.container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+ 
+/**index.wxss**/
+ec-canvas {
+  width: 100%;
+  height: 100%;
+}
+.img{
+  height: 100%;
+  width: 36px;
+ 
+}
+.run1{
+  height: 50px;
+  width: 100%;
+ 
+  background:	PowDerBlue;
+}
+.run2{
+   height: 50px;
+  width: 100%;
+  background:	Moccasin;
+}
+.freeBG{
+         margin: auto;
+         z-index: -1;
+}
 </style>
